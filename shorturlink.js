@@ -12,7 +12,26 @@ if (window.location.hash != "") {
     });
 }
 
-$("#sbtn").click(shorturl);
+$(document).ready(function(){
+
+$("#btnShort").on("click",function(){
+var urlinput = $("#urlinput").val(),
+shortenedURL = $("#shortenedURL"),		
+generateloading = $("#generateloading"),		
+resulturl = $('#resulturl');			
+
+if (urlinput == "") {
+$("#urlinput").focus();
+return false;
+}
+
+$("#copytoclipboard").html("<span class='fa fa-floppy-o'></span> Copy URL");
+generateloading.removeClass('hidden');
+shortenedURL.addClass('hidden');
+    var clipboard = new ClipboardJS('.copytoclipboard');
+clipboard.on('success', function(e) {
+$("#copytoclipboard").html("<span class='fa fa-check'></span> Link Copied to Clipboard");
+});
 
 function cinp(){
     document.getElementById("erbox").innerHTML = "";
