@@ -12,26 +12,7 @@ if (window.location.hash != "") {
     });
 }
 
-$(document).ready(function(){
-
-$("#btnShort").on("click",function(){
-var urlinput = $("#urlinput").val(),
-shortenedURL = $("#shortenedURL"),		
-generateloading = $("#generateloading"),		
-resulturl = $('#resulturl');			
-
-if (urlinput == "") {
-$("#urlinput").focus();
-return false;
-}
-
-$("#copytoclipboard").html("<span class='fa fa-floppy-o'></span> Copy URL");
-generateloading.removeClass('hidden');
-shortenedURL.addClass('hidden');
-    var clipboard = new ClipboardJS('.copytoclipboard');
-clipboard.on('success', function(e) {
-$("#copytoclipboard").html("<span class='fa fa-check'></span> Link Copied to Clipboard");
-});
+$("#sbtn").click(shorturl);
 
 function cinp(){
     document.getElementById("erbox").innerHTML = "";
@@ -62,7 +43,7 @@ function cinp(){
 }
 
 function geturl(){
-    var url = document.getElementById("urlinput").value;
+    var url = document.getElementById("shortenedURL").value;
     var protocol_ok = url.startsWith("http://") || url.startsWith("https://") || url.startsWith("ftp://");
     if(!protocol_ok){
         newurl = "http://"+url;
