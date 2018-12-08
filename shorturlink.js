@@ -43,7 +43,7 @@ function cinp(){
 }
 
 function geturl(){
-    var url = document.getElementById("safeurl").value;
+    var url = document.getElementById("urlinput").value;
     var protocol_ok = url.startsWith("http://") || url.startsWith("https://") || url.startsWith("ftp://");
     if(!protocol_ok){
         newurl = "http://"+url;
