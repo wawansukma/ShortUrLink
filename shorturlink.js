@@ -1,4 +1,4 @@
-var endpoint = "https://www.jsonstore.io/973ff767e01314a791f15d7c73b6d8384703a48af1f667f737dd902940c10c37";
+var endpoint = "https://www.jsonstore.io/ed968304b2537ec193bf6a42e4dce7f4f2d3a2e597111817c6140cf96f49d14a";
 
 var hashh = window.location.hash.substr(1);
 if (window.location.hash != "") {
